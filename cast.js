@@ -389,6 +389,7 @@
         playerParams['autoplay'] = true;
       }
       autoPlay = playerParams['autoplay'];
+      delete playerParams.autoplay;
       ccLanguage = '';
       if (!!playerParams['ccLanguage']) {
         // player paramteres may contain ccLanguage: "en" (or other language), in which case
@@ -429,13 +430,7 @@
                   // Controlled extention of displaying loading screen, currently set to 3 seconds.  
                   // ATTN: Receiver HAS TO publish CAN_PLAY in case of autoPlay
                   setTimeout(function() {
-                    player.mb.publish(OO.EVENTS.CAN_PLAY);
-                    player.play().then(function(){
-                      console.log("a normal playback");
-                    }).catch(function(e){
-                      console.log("Error: ", e);
-                      player.play();
-                    });
+                    player.play();                 
                     //player.mb.publish(OO.EVENTS.INITIAL_PLAY);
                   }, 3000);
                 } else {
