@@ -430,7 +430,8 @@
                   // Controlled extention of displaying loading screen, currently set to 3 seconds.  
                   // ATTN: Receiver HAS TO publish CAN_PLAY in case of autoPlay
                   //player.mb.publish(OO.EVENTS.CAN_PLAY);
-                  setTimeout(function() {                
+                  setTimeout(function() { 
+                    player.mb.publish(OO.EVENTS.CAN_PLAY)              
                     player.mb.publish(OO.EVENTS.INITIAL_PLAY);
                   }, 3000);
                 } else {
