@@ -431,7 +431,7 @@
                   // ATTN: Receiver HAS TO publish CAN_PLAY in case of autoPlay
                   player.mb.publish(OO.EVENTS.CAN_PLAY);
                   setTimeout(function() {
-                    player.play();                 
+                    //player.play();                 
                     player.mb.publish(OO.EVENTS.INITIAL_PLAY);
                   }, 3000);
                 } else {
